@@ -1,0 +1,70 @@
+const char ssid_flds_html[] PROGMEM = R"rawliteral(
+            <!-- <tr>
+                <th>&nbsp;</th>
+                <td><input type="text" size=16 name="SSID%x%" size="34" value="%SSIDx%"></td>
+                <td><input type="password" size=16 name="Passwd%x%" size="34" value="%Passwdx%"></td>
+            </tr>
+            %SSID_LINE% -->
+)rawliteral";
+
+const char page2_html[] PROGMEM = R"rawliteral(
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>YieldX Configuration Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<style>
+    table,
+    th,
+    td {
+        font-size: large;
+        text-align: left;
+    }
+</style>
+
+<body>
+    <div style="text-align: center;">
+        <img src="%YieldXLogo%">
+    </div>
+    <h1 align=center style="font-size:40px;">
+        RedMite Network Configuration
+    </h1>
+    <form action="/Page2Next">
+        <table id="table1" ; cellspacing="5px" cellpadding="5%" ; align="center">
+            <tr>
+                <th>Network Time Server:</th>
+                <td><input type="text" name="NTP" size="24" value="%NTP%"></td>
+                <th>Time Zone:</th>
+                <td><input type="number" name="NTZ" value="%NTZ%" size="3" min="-12" max="12">[Hrs]</td>
+            </tr>
+            <tr>
+                <th>MQTT Server:</th>
+                <td><input type="text" name="BRKADDR" size="24" value="%BRKADDR%"></td>
+                <td>Port:</td>
+                <td><input type="number" name="BRKPRT" size="4" value="%BRKPRT%" max="9999"></td>
+            </tr>
+            <tr>
+                <th>Local WiFi:</th>
+                <td><input type="text" size=16 name="SSID" size="34" value="%SSID%"></td>
+                <td><input type="password" size=16 name="PASS" size="34" value="%PASS%"></td>
+            </tr>
+            <tr>
+                <th> </th>
+                <td><input type="text" size=16 name="SSID1" size="34" value="%SSID1%"></td>
+                <td><input type="password" size=16 name="PASS1" size="34" value="%PASS1%"></td>
+            </tr>
+            <!-- %SSID_LINE% -->
+            <tr>
+                <td><input type="submit" value="Next"></td>
+                <td><input type="submit" value="Done" formaction="/Page2Done"></td>
+                <td><input type="submit" value="<= Back" formaction="/Page2Back"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
+)rawliteral";
